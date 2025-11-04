@@ -1,31 +1,15 @@
-import { modules } from '@/lib/modules';
+import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ModuleCard } from '@/components/module-card';
 import Image from 'next/image';
+import { Card } from '@/components/ui/card';
 
 export default function Home() {
-  const getImageForModule = (imageId: string) => {
-    const image = PlaceHolderImages.find((img) => img.id === imageId);
-    if (!image) {
-      // Fallback in case image is not found
-      return {
-        id: 'fallback',
-        description: 'Default placeholder image',
-        imageUrl: 'https://picsum.photos/seed/fallback/400/400',
-        imageHint: 'scroll paper',
-      };
-    }
-    return image;
+  const getImage = (id: string) => {
+    return PlaceHolderImages.find((img) => img.id === id)!;
   };
 
-  const newTestamentStartIndex = modules.findIndex(
-    (module) => module.id === 'mateus'
-  );
-  const oldTestamentModules = modules.slice(0, newTestamentStartIndex);
-  const newTestamentModules = modules.slice(newTestamentStartIndex);
-
-  const oldTestamentImage = getImageForModule('antigo-testamento');
-  const newTestamentImage = getImageForModule('novo-testamento');
+  const oldTestamentImage = getImage('antigo-testamento');
+  const newTestamentImage = getImage('novo-testamento');
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -38,14 +22,14 @@ export default function Home() {
         </p>
       </header>
 
-      <div className="space-y-12">
-        <section>
-          <div className="relative mb-6 h-48 w-full overflow-hidden rounded-lg shadow-lg md:h-64">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <Link href="/testaments/old">
+          <Card className="group relative aspect-video w-full overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-primary/20 hover:scale-105">
             <Image
               src={oldTestamentImage.imageUrl}
               alt={oldTestamentImage.description}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-300 group-hover:scale-110"
               data-ai-hint={oldTestamentImage.imageHint}
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/50 p-4">
@@ -53,26 +37,15 @@ export default function Home() {
                 Antigo Testamento
               </h2>
             </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:gap-6">
-            {oldTestamentModules.map((module) => (
-              <ModuleCard
-                key={module.id}
-                title={module.title}
-                slug={module.id}
-                image={getImageForModule(module.imageId)}
-              />
-            ))}
-          </div>
-        </section>
-
-        <section>
-          <div className="relative mb-6 h-48 w-full overflow-hidden rounded-lg shadow-lg md:h-64">
-             <Image
+          </Card>
+        </Link>
+        <Link href="/testaments/new">
+          <Card className="group relative aspect-video w-full overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-primary/20 hover:scale-105">
+            <Image
               src={newTestamentImage.imageUrl}
               alt={newTestamentImage.description}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-300 group-hover:scale-110"
               data-ai-hint={newTestamentImage.imageHint}
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/50 p-4">
@@ -80,18 +53,8 @@ export default function Home() {
                 Novo Testamento
               </h2>
             </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:gap-6">
-            {newTestamentModules.map((module) => (
-              <ModuleCard
-                key={module.id}
-                title={module.title}
-                slug={module.id}
-                image={getImageForModule(module.imageId)}
-              />
-            ))}
-          </div>
-        </section>
+          </Card>
+        </Link>
       </div>
     </div>
   );
