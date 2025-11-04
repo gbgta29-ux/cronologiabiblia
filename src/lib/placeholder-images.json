@@ -1,6 +1,18 @@
 {
   "placeholderImages": [
     {
+      "id": "antigo-testamento",
+      "description": "Capa para o Antigo Testamento",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/50sag119cje_1762266776177.jpg",
+      "imageHint": "old testament"
+    },
+    {
+      "id": "novo-testamento",
+      "description": "Capa para o Novo Testamento",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/4zztmqf3x67_1762266774020.jpg",
+      "imageHint": "new testament"
+    },
+    {
       "id": "genesis",
       "description": "Image for Genesis",
       "imageUrl": "https://images.unsplash.com/photo-1651420116374-85c8a81f18d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjcmVhdGlvbiUyMGxpZ2h0fGVufDB8fHx8MTc2MjI2MTI5MXww&ixlib=rb-4.1.0&q=80&w=1080",
