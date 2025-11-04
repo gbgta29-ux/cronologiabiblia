@@ -15,205 +15,205 @@
     {
       "id": "genesis",
       "description": "Image for Genesis",
-      "imageUrl": "https://images.unsplash.com/photo-1651420116374-85c8a81f18d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjcmVhdGlvbiUyMGxpZ2h0fGVufDB8fHx8MTc2MjI2MTI5MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/e0av040o5f_1762267566820.jpg",
       "imageHint": "creation light"
     },
     {
       "id": "jo",
       "description": "Image for Job",
-      "imageUrl": "https://images.unsplash.com/photo-1762079272009-ab8ce2aed745?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdWZmZXJpbmclMjBmYWl0aHxlbnwwfHx8fDE3NjIyNjEyOTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/m80gnhqdl5_1762267566337.jpg",
       "imageHint": "suffering faith"
     },
     {
       "id": "exodo",
       "description": "Image for Exodus",
-      "imageUrl": "https://images.unsplash.com/photo-1668968643576-5335471191d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb3NlcyUyMHNlYXxlbnwwfHx8fDE3NjIyNjEyOTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/qk18kwf8hjc_1762267565950.jpg",
       "imageHint": "moses sea"
     },
     {
       "id": "levitico",
       "description": "Image for Leviticus",
-      "imageUrl": "https://images.unsplash.com/photo-1518603999153-73610149761f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsYXclMjBzY3JvbGx8ZW58MHx8fHwxNzYyMjYxMjkwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/dzqzd4qc25w_1762267565564.jpg",
       "imageHint": "law scroll"
     },
     {
       "id": "numeros",
       "description": "Image for Numbers",
-      "imageUrl": "https://images.unsplash.com/photo-1665304771786-8012f28cd4c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGVzZXJ0JTIwam91cm5leXxlbnwwfHx8fDE3NjIxNzMxNTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/acr9q0urbl_1762267565171.jpg",
       "imageHint": "desert journey"
     },
     {
       "id": "deuteronomio",
       "description": "Image for Deuteronomy",
-      "imageUrl": "https://images.unsplash.com/photo-1590099543482-3b3d3083a474?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtb3NlcyUyMGxhd3xlbnwwfHx8fDE3NjIyNjEyOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/78k0bizsnhn_1762267564752.jpg",
       "imageHint": "moses law"
     },
     {
       "id": "josue",
       "description": "Image for Joshua",
-      "imageUrl": "https://images.unsplash.com/photo-1578924825332-401f6a5f73be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxqZXJpY2hvJTIwYmF0dGxlfGVufDB8fHx8MTc2MjI2MTI5MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/i3mnec496u8_1762267549574.jpg",
       "imageHint": "jericho battle"
     },
     {
       "id": "juizes",
       "description": "Image for Judges",
-      "imageUrl": "https://images.unsplash.com/photo-1596505376262-586087fce25b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzYW1zb24lMjBzdHJlbmd0aHxlbnwwfHx8fDE3NjIyNjEyOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/841k4bpwb25_1762267564127.jpg",
       "imageHint": "samson strength"
     },
     {
       "id": "rute",
       "description": "Image for Ruth",
-      "imageUrl": "https://images.unsplash.com/photo-1651428892842-40e677a7dabd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxydXRoJTIwZmllbGR8ZW58MHx8fHwxNzYyMjYxMjkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/92dvkwo3hkl_1762267563797.jpg",
       "imageHint": "ruth field"
     },
     {
       "id": "1-samuel",
       "description": "Image for 1 Samuel",
-      "imageUrl": "https://images.unsplash.com/photo-1664214043501-15ace5f1ef85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXZpZCUyMHNhbXVlbHxlbnwwfHx8fDE3NjIyNjEyOTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/bditqw9kltk_1762267563448.jpg",
       "imageHint": "david samuel"
     },
     {
       "id": "2-samuel",
       "description": "Image for 2 Samuel",
-      "imageUrl": "https://images.unsplash.com/photo-1671723132540-a5366147fa82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkYXZpZCUyMGtpbmd8ZW58MHx8fHwxNzYyMjYxMjkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/ep2fsnoej86_1762267563000.jpg",
       "imageHint": "david king"
     },
     {
       "id": "1-reis",
       "description": "Image for 1 Kings",
-      "imageUrl": "https://images.unsplash.com/photo-1634909558454-c3e53cbe6321?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzb2xvbW9uJTIwdGVtcGxlfGVufDB8fHx8MTc2MjI2MTI5MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/l1orl7t0qro_1762267562115.png",
       "imageHint": "solomon temple"
     },
     {
       "id": "2-reis",
       "description": "Image for 2 Kings",
-      "imageUrl": "https://images.unsplash.com/photo-1754462529584-a36c94600a07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxlbGlqYWglMjBmaXJlfGVufDB8fHx8MTc2MjI2MTI5MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/sm9l62dng5_1762267561126.png",
       "imageHint": "elijah fire"
     },
     {
       "id": "1-cronicas",
       "description": "Image for 1 Chronicles",
-      "imageUrl": "https://images.unsplash.com/photo-1695462951911-d66f8718a649?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXZpZCUyMGxpbmVhZ2V8ZW58MHx8fHwxNzYyMjYxMjkwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/3ib9cww7kn5_1762267560759.webp",
       "imageHint": "david lineage"
     },
     {
       "id": "2-cronicas",
       "description": "Image for 2 Chronicles",
-      "imageUrl": "https://images.unsplash.com/photo-1728066982240-5e59aade8cb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzb2xvbW9uJTIwa2luZ2RvbXxlbnwwfHx8fDE3NjIyNjEyOTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/o32y0yun1ep_1762267559979.jpg",
       "imageHint": "solomon kingdom"
     },
     {
       "id": "salmos",
       "description": "Image for Psalms",
-      "imageUrl": "https://images.unsplash.com/photo-1618562203879-77881222bd4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkYXZpZCUyMGhhcnB8ZW58MHx8fHwxNzYyMjYxMjkwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/f83suvzdl96_1762267559622.webp",
       "imageHint": "david harp"
     },
     {
       "id": "proverbios",
       "description": "Image for Proverbs",
-      "imageUrl": "https://images.unsplash.com/photo-1632556717596-c283e65b1bce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3aXNkb20lMjBzY3JvbGx8ZW58MHx8fHwxNzYyMjYxMjkwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/8awzq809iyd_1762267558976.jpg",
       "imageHint": "wisdom scroll"
     },
     {
       "id": "eclesiastes",
       "description": "Image for Ecclesiastes",
-      "imageUrl": "https://images.unsplash.com/photo-1633666989999-25f517c0b813?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx2YW5pdHklMjBsaWZlfGVufDB8fHx8MTc2MjI2MTI5MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/9y5bjug6uoe_1762267558580.jpg",
       "imageHint": "vanity life"
     },
     {
       "id": "canticos",
       "description": "Image for Song of Solomon",
-      "imageUrl": "https://images.unsplash.com/photo-1517867065801-e20f409696b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsb3ZlJTIwc29uZ3xlbnwwfHx8fDE3NjIyNjEyOTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/jg5pzwbrr4_1762267558206.jpg",
       "imageHint": "love song"
     },
     {
       "id": "isaias",
       "description": "Image for Isaiah",
-      "imageUrl": "https://images.unsplash.com/photo-1747497056425-1a55dd4bd2f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwcm9waGVjeSUyMHNjcm9sbHxlbnwwfHx8fDE3NjIyNjEyOTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/vtvpxc9nybc_1762267557900.jpg",
       "imageHint": "prophecy scroll"
     },
     {
       "id": "oseias",
       "description": "Image for Hosea",
-      "imageUrl": "https://images.unsplash.com/photo-1650614204892-fad202e0ddbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwcm9waGV0JTIwbG92ZXxlbnwwfHx8fDE3NjIyNjEyOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/oi5f7hrems8_1762267557605.jpg",
       "imageHint": "prophet love"
     },
     {
       "id": "amos",
       "description": "Image for Amos",
-      "imageUrl": "https://images.unsplash.com/photo-1611729595158-810eaceb404a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxqdXN0aWNlJTIwcHJvcGhldHxlbnwwfHx8fDE3NjIyNjEyOTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/j2oobo2kp9_1762267557242.jpg",
       "imageHint": "justice prophet"
     },
     {
       "id": "jonas",
       "description": "Image for Jonah",
-      "imageUrl": "https://images.unsplash.com/photo-1678459470491-694734e90255?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3aGFsZSUyMHByb3BoZXR8ZW58MHx8fHwxNzYyMjYxMjkwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/m9q2qdejkhr_1762267556707.jpg",
       "imageHint": "whale prophet"
     },
     {
       "id": "jeremias",
       "description": "Image for Jeremiah",
-      "imageUrl": "https://images.unsplash.com/photo-1600260152177-d6cf44c22650?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3ZWVwaW5nJTIwcHJvcGhldHxlbnwwfHx8fDE3NjIyNjEyOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/yvr4zhj6elg_1762267555954.jpg",
       "imageHint": "weeping prophet"
     },
     {
       "id": "lamentacoes",
       "description": "Image for Lamentations",
-      "imageUrl": "https://images.unsplash.com/photo-1707337965825-8e5e04426bb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxqZXJ1c2FsZW0lMjBmYWxsfGVufDB8fHx8MTc2MjI2MTI5MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/9jlh8hkhx2g_1762267555514.jpg",
       "imageHint": "jerusalem fall"
     },
     {
       "id": "sofonias",
       "description": "Image for Zephaniah",
-      "imageUrl": "https://images.unsplash.com/photo-1717009882933-6a613cf821e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxqdWRnZW1lbnQlMjBkYXl8ZW58MHx8fHwxNzYyMjYxMjkwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/ns4ypjq15ir_1762267555031.jpg",
       "imageHint": "judgement day"
     },
     {
       "id": "naum",
       "description": "Image for Nahum",
-      "imageUrl": "https://images.unsplash.com/photo-1542351515-64c6b4db38b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxuaW5ldmVoJTIwZmFsbHxlbnwwfHx8fDE3NjIyNjEyOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/4ago1tczcxn_1762267554605.jpg",
       "imageHint": "nineveh fall"
     },
     {
       "id": "habacuque",
       "description": "Image for Habakkuk",
-      "imageUrl": "https://images.unsplash.com/photo-1561651188-aadd04d57426?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxmYWl0aCUyMGRvdWJ0fGVufDB8fHx8MTc2MjI2MTI5MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/vjnau1sjld_1762267554081.jpg",
       "imageHint": "faith doubt"
     },
     {
       "id": "daniel",
       "description": "Image for Daniel",
-      "imageUrl": "https://images.unsplash.com/photo-1623217625703-202b8eafd722?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsaW9ucyUyMGRlbnxlbnwwfHx8fDE3NjIyNjEyOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/npc49esank_1762267553671.jpg",
       "imageHint": "lions den"
     },
     {
       "id": "ezequiel",
       "description": "Image for Ezekiel",
-      "imageUrl": "https://picsum.photos/seed/ezequiel/400/400",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/f08ayx9v7u_1762267553218.jpg",
       "imageHint": "visions prophet"
     },
     {
       "id": "obadias",
       "description": "Image for Obadiah",
-      "imageUrl": "https://picsum.photos/seed/obadias/400/400",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/be73ya6x8yj_1762267552578.jpg",
       "imageHint": "edom doom"
     },
     {
       "id": "ageu",
       "description": "Image for Haggai",
-      "imageUrl": "https://images.unsplash.com/photo-1740910031287-2194136c968d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0ZW1wbGUlMjByZWJ1aWxkfGVufDB8fHx8MTc2MjI2MTI5MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/9o6u2hua1ft_1762267551855.jpg",
       "imageHint": "temple rebuild"
     },
     {
       "id": "zacarias",
       "description": "Image for Zechariah",
-      "imageUrl": "https://images.unsplash.com/photo-1750029823481-275424928f41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx2aXNpb25zJTIwcHJvcGhlY3l8ZW58MHx8fHwxNzYyMjYxMjkwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/trd2wdoyacd_1762267551352.jpg",
       "imageHint": "visions prophecy"
     },
     {
       "id": "malaquias",
       "description": "Image for Malachi",
-      "imageUrl": "https://images.unsplash.com/photo-1705931607347-de7e96ec683e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtZXNzZW5nZXIlMjBwcm9waGVjeXxlbnwwfHx8fDE3NjIyNjEyOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://gvdtvgefzbxunjrtzrdw.supabase.co/storage/v1/object/public/media/3pcmz5fss5v_1762267550816.jpg",
       "imageHint": "messenger prophecy"
     },
     {
