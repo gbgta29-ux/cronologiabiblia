@@ -10,7 +10,7 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ModulePage({ params }: { params: { slug: string } }) {
+export default async function ModulePage({ params }: { params: { slug: string } }) {
   const module = modules.find((m) => m.id === params.slug);
 
   if (!module) {

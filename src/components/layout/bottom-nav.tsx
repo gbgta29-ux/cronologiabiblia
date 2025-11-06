@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, BookOpen, User, Headphone } from 'lucide-react';
+import { Home, BookOpen, User, Headphones } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export default function BottomNav() {
@@ -11,7 +11,7 @@ export default function BottomNav() {
   const navItems = [
     { href: '/', label: 'Início', icon: Home },
     { href: '/library', label: 'Biblioteca', icon: BookOpen },
-    { href: '/audio', label: 'Áudio', icon: Headphone },
+    { href: '/audio', label: 'Áudio', icon: Headphones },
     { href: '/profile', label: 'Perfil', icon: User },
   ];
 
