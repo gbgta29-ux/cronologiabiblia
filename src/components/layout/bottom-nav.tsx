@@ -16,7 +16,7 @@ export default function BottomNav() {
   ];
 
   return (
-    <footer className="fixed bottom-0 left-0 z-50 w-full border-t border-zinc-200 bg-white shadow-t-lg md:hidden">
+    <footer className="fixed bottom-0 left-0 z-50 w-full border-t border-zinc-200/20 bg-background/80 shadow-t-lg backdrop-blur-sm md:hidden">
       <nav className="mx-auto flex h-20 items-center justify-around px-2">
         {navItems.map((item) => (
           <Link

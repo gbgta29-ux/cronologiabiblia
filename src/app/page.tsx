@@ -34,9 +34,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <header className="relative mb-4 overflow-hidden bg-zinc-100 p-4 text-center">
+      <header className="relative mb-4 overflow-hidden bg-transparent p-4 text-center">
         <div className="container mx-auto flex flex-col items-center py-8">
-          <h1 className="font-headline text-3xl font-bold text-zinc-800">
+          <h1 className="font-headline text-3xl font-bold text-foreground">
             Resumo Cronológico da Bíblia
           </h1>
           <Button className="mt-4 rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg hover:bg-primary/90">
@@ -64,7 +64,7 @@ export default function Home() {
                       />
                     )}
                   </Card>
-                  <p className="mt-2 text-center text-sm font-medium text-zinc-700">
+                  <p className="mt-2 text-center text-sm font-medium text-foreground/80">
                     {card.title}
                   </p>
                 </div>
