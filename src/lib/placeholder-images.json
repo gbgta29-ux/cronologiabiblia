@@ -381,8 +381,32 @@
     {
       "id": "apocalipse",
       "description": "Image for Revelation",
-      "imageUrl": "https://picsum.photos/seed/apocalipse/400/400",
+      "imageUrl": "https://images.unsplash.com/photo-1609465354096-e60c5f1395a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZXZlbGF0aW9uJTIwZW5kfGVufDB8fHx8MTc2MjQzNzY3NXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "revelation end"
+    },
+    {
+      "id": "resumo-cronologico",
+      "description": "Card para Resumo Cronológico da Bíblia",
+      "imageUrl": "https://kdloteojnkcjblhoirea.supabase.co/storage/v1/object/public/public-files/0.5118671324479582.jpg",
+      "imageHint": "bible summary"
+    },
+    {
+      "id": "bonus-pdf",
+      "description": "Card para Bônus PDF Premium",
+      "imageUrl": "https://kdloteojnkcjblhoirea.supabase.co/storage/v1/object/public/public-files/0.596312825482967.jpg",
+      "imageHint": "premium pdf"
+    },
+    {
+      "id": "presentes",
+      "description": "Card para Seus Presentes",
+      "imageUrl": "https://kdloteojnkcjblhoirea.supabase.co/storage/v1/object/public/public-files/0.8920688153846316.jpg",
+      "imageHint": "gifts present"
+    },
+    {
+      "id": "estudo-salmos",
+      "description": "Card para Estudo dos Salmos",
+      "imageUrl": "https://kdloteojnkcjblhoirea.supabase.co/storage/v1/object/public/public-files/0.44817759144453273.jpg",
+      "imageHint": "psalms study"
     }
   ]
 }

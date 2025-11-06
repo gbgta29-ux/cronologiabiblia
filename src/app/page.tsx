@@ -2,60 +2,77 @@ import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
   const getImage = (id: string) => {
     return PlaceHolderImages.find((img) => img.id === id)!;
   };
 
-  const oldTestamentImage = getImage('antigo-testamento');
-  const newTestamentImage = getImage('novo-testamento');
+  const cards = [
+    {
+      id: 'resumo-cronologico',
+      title: 'Resumo Cronológico',
+      href: '/testaments/old',
+    },
+    {
+      id: 'bonus-pdf',
+      title: 'Imprima a Cronologia',
+      href: '#',
+    },
+    {
+      id: 'presentes',
+      title: 'Seus Presentes',
+      href: '#',
+    },
+    {
+      id: 'estudo-salmos',
+      title: 'Imprima os Aconselhamentos',
+      href: '#',
+    },
+  ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <header className="mb-8 text-center md:mb-12">
-        <h1 className="font-headline text-4xl font-bold text-primary sm:text-5xl md:text-6xl">
-          Biblical Chronicles
-        </h1>
-        <p className="mt-2 text-lg text-muted-foreground">
-          A chronological journey through the Scriptures.
-        </p>
+    <div className="flex flex-col">
+      <header className="relative mb-4 overflow-hidden bg-zinc-100 p-4 text-center">
+        <div className="container mx-auto flex flex-col items-center py-8">
+          <h1 className="font-headline text-3xl font-bold text-zinc-800">
+            Resumo Cronológico da Bíblia
+          </h1>
+          <Button className="mt-4 rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg hover:bg-primary/90">
+            Começar Agora
+          </Button>
+        </div>
       </header>
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        <Link href="/testaments/old">
-          <Card className="group relative aspect-video w-full overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-primary/20 hover:scale-105">
-            <Image
-              src={oldTestamentImage.imageUrl}
-              alt={oldTestamentImage.description}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-110"
-              data-ai-hint={oldTestamentImage.imageHint}
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/50 p-4">
-              <h2 className="font-headline text-3xl font-bold text-white drop-shadow-md sm:text-4xl">
-                Antigo Testamento
-              </h2>
-            </div>
-          </Card>
-        </Link>
-        <Link href="/testaments/new">
-          <Card className="group relative aspect-video w-full overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-primary/20 hover:scale-105">
-            <Image
-              src={newTestamentImage.imageUrl}
-              alt={newTestamentImage.description}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-110"
-              data-ai-hint={newTestamentImage.imageHint}
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/50 p-4">
-              <h2 className="font-headline text-3xl font-bold text-white drop-shadow-md sm:text-4xl">
-                Novo Testamento
-              </h2>
-            </div>
-          </Card>
-        </Link>
-      </div>
+      <main className="container mx-auto flex-grow px-4 py-4">
+        <div className="grid grid-cols-2 gap-4">
+          {cards.map((card) => {
+            const image = getImage(card.id);
+            return (
+              <Link href={card.href} key={card.id} className="group">
+                <div className="flex flex-col items-center">
+                  <Card className="aspect-square w-full overflow-hidden rounded-lg shadow-md transition-shadow group-hover:shadow-xl">
+                    {image && (
+                      <Image
+                        src={image.imageUrl}
+                        alt={image.description}
+                        width={400}
+                        height={400}
+                        className="h-full w-full object-cover"
+                        data-ai-hint={image.imageHint}
+                      />
+                    )}
+                  </Card>
+                  <p className="mt-2 text-center text-sm font-medium text-zinc-700">
+                    {card.title}
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </main>
     </div>
   );
 }
