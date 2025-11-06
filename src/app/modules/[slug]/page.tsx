@@ -30,8 +30,19 @@ export default function ModulePage({ params }: { params: { slug: string } }) {
           {module.title}
         </h1>
       </header>
-      <div className="flex min-h-[60vh] items-center justify-center rounded-lg border-2 border-dashed border-muted-foreground/20 bg-card/30 p-8">
-        <p className="text-center text-muted-foreground">O conteúdo em PDF será exibido aqui.</p>
+      <div className="min-h-[70vh] rounded-lg border-2 border-dashed border-muted-foreground/20 bg-card/30">
+        {module.pdfUrl ? (
+          <iframe
+            src={module.pdfUrl}
+            className="h-full w-full"
+            style={{ minHeight: '70vh' }}
+            allow="fullscreen"
+          />
+        ) : (
+          <div className="flex h-full min-h-[60vh] items-center justify-center p-8">
+            <p className="text-center text-muted-foreground">O conteúdo em PDF será exibido aqui.</p>
+          </div>
+        )}
       </div>
     </div>
   );

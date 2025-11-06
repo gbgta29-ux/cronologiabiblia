@@ -2,10 +2,11 @@ export type Module = {
   id: string;
   title: string;
   imageId: string;
+  pdfUrl?: string;
 };
 
 export const modules: Module[] = [
-  { id: 'genesis', title: 'Gênesis', imageId: 'genesis' },
+  { id: 'genesis', title: 'Gênesis', imageId: 'genesis', pdfUrl: 'https://kdloteojnkcjblhoirea.supabase.co/storage/v1/object/public/public-files/0.7581292954548847.pdf' },
   { id: 'jo', title: 'Jó', imageId: 'jo' },
   { id: 'exodo', title: 'Êxodo', imageId: 'exodo' },
   { id: 'levitico', title: 'Levítico', imageId: 'levitico' },
