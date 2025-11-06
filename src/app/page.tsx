@@ -17,7 +17,7 @@ export default function Home() {
     },
     {
       id: 'bonus-pdf',
-      title: 'Imprima a Cronologia',
+      title: 'Seus PDFS bonus',
       href: '#',
     },
     {
