@@ -13,7 +13,7 @@ export default function Home() {
     {
       id: 'resumo-cronologico',
       title: 'Resumo Cronológico',
-      href: '/testaments/old',
+      href: '/testaments',
     },
     {
       id: 'bonus-pdf',
