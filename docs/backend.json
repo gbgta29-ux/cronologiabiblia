@@ -1,0 +1,121 @@
+{
+  "entities": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user account within the Biblical Chronicles app.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the user.",
+          "format": "uuid"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the user.",
+          "format": "email"
+        },
+        "name": {
+          "type": "string",
+          "description": "Full name of the user."
+        },
+        "activationKey": {
+          "type": "string",
+          "description": "Activation key used during account creation. Only accounts with activationKey '10SD59S325FDS' are allowed."
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "Indicates whether the user account is active."
+        }
+      },
+      "required": [
+        "id",
+        "email",
+        "name",
+        "activationKey",
+        "isActive"
+      ]
+    },
+    "Module": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Module",
+      "type": "object",
+      "description": "Represents a module within the Biblical Chronicles app.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the module."
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the module (e.g., Genesis)."
+        },
+        "pdfUrl": {
+          "type": "string",
+          "description": "URL to the PDF document associated with the module.",
+          "format": "uri"
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL to the image associated with the module.",
+          "format": "uri"
+        },
+        "order": {
+          "type": "number",
+          "description": "The chronological order of the module within the app."
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "pdfUrl",
+        "imageUrl",
+        "order"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user account information. The `activationKey` field is used during account creation. The `isActive` field is used to enable/disable the user account.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/modules/{moduleId}",
+        "definition": {
+          "entityName": "Module",
+          "schema": {
+            "$ref": "#/backend/entities/Module"
+          },
+          "description": "Stores module data, including title, PDF URL, image URL, and order.  Accessible to any authenticated user.",
+          "params": [
+            {
+              "name": "moduleId",
+              "description": "The unique identifier of the module."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "This design prioritizes security and scalability for the Biblical Chronicles application. The key principle is Authorization Independence, achieved through denormalization. User authentication is handled via email/password, with an activation key requirement.  All modules are public and accessible to any authenticated user. The structure enables secure 'list' operations and avoids complex, hierarchical authorization dependencies. \n\n*   **Users Collection:** Stores user data. User documents include the activation key to control account creation, and `isActive` to enable/disable accounts.\n*   **Modules Collection:** Contains module data (title, PDF URL, image URL, and order). This collection is publicly readable by any logged-in user. Since all users have read access to all modules, no authorization fields are required.\n\n**Authorization Independence:** No `get()` calls are needed in security rules. Access control is determined solely by the existence of the user document, the activation key during creation, and the `isActive` status.\n\n**QAPs:**\n*   Secure `list` operations are achieved by segregating user data and module data into separate collections with clearly defined access rules.\n\n"
+  }
+}
