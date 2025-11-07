@@ -32,7 +32,7 @@ export default function TestamentsPage() {
       </header>
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        <Link href="/testaments/old" className="group">
+        <Link href="/modules?testament=old" className="group">
           <Card className="relative h-64 w-full overflow-hidden rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105">
             {oldTestamentImage && (
               <Image
@@ -51,7 +51,7 @@ export default function TestamentsPage() {
           </Card>
         </Link>
 
-        <Link href="/testaments/new" className="group">
+        <Link href="/modules?testament=new" className="group">
           <Card className="relative h-64 w-full overflow-hidden rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105">
             {newTestamentImage && (
               <Image
