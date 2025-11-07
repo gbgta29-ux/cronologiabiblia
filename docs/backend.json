@@ -16,6 +16,23 @@
         }
       },
       "required": ["name", "email"]
+    },
+    "progress": {
+      "title": "Progress",
+      "description": "Tracks a user's progress through modules.",
+      "type": "object",
+      "properties": {
+        "completed": {
+          "type": "boolean",
+          "description": "Whether the module is completed."
+        },
+        "completedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date and time the module was completed."
+        }
+      },
+      "required": ["completed"]
     }
   },
   "auth": {
@@ -27,6 +44,12 @@
         "$ref": "#/entities/user"
       },
       "description": "Stores user profile information."
+    },
+    "/users/{userId}/progress/{moduleId}": {
+        "schema": {
+            "$ref": "#/entities/progress"
+        },
+        "description": "Stores user progress for each module."
     }
   }
 }

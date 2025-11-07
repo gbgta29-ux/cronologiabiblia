@@ -1,28 +1,69 @@
+'use client';
+
+import { useEffect, useMemo, useState } from 'react';
+import { notFound, useRouter } from 'next/navigation';
+import { doc, getDoc } from 'firebase/firestore';
+import { useAuth, useFirestore, useUser } from '@/firebase';
+import { setDocumentNonBlocking } from '@/firebase/non-blocking-updates';
 import { modules } from '@/lib/modules';
-import { notFound } from 'next/navigation';
-import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import { ArrowLeft, CheckCircle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useDocumentData } from 'react-firebase-hooks/firestore';
 
-export function generateStaticParams() {
-  return modules.map((module) => ({
-    slug: module.id,
-  }));
-}
+export default function ModulePage({ params }: { params: { slug: string } }) {
+  const router = useRouter();
+  const { user, isLoading: userIsLoading } = useUser();
+  const db = useFirestore();
+  const [isCompleted, setIsCompleted] = useState(false);
 
-export default async function ModulePage({ params }: { params: { slug: string } }) {
   const module = modules.find((m) => m.id === params.slug);
+
+  const progressDocRef = useMemo(() => {
+    if (!user || !db) return undefined;
+    return doc(db, 'users', user.uid, 'progress', params.slug);
+  }, [user, db, params.slug]);
+
+  const [progressData, progressLoading] = useDocumentData(progressDocRef);
+
+  useEffect(() => {
+    if (progressData) {
+      setIsCompleted(progressData.completed);
+    }
+  }, [progressData]);
+
+  if (userIsLoading || progressLoading) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin" />
+      </div>
+    );
+  }
 
   if (!module) {
     notFound();
   }
 
+  const handleToggleComplete = async () => {
+    if (!user || !db) return;
+    const newCompletedStatus = !isCompleted;
+    setIsCompleted(newCompletedStatus);
+
+    if (progressDocRef) {
+      setDocumentNonBlocking(
+        progressDocRef,
+        { completed: newCompletedStatus, completedAt: new Date() },
+        { merge: true }
+      );
+    }
+  };
+
   return (
     <div className="container mx-auto max-w-4xl px-4 py-8">
-       <Button asChild variant="ghost" className="mb-8 hidden md:inline-flex">
-        <Link href="/">
+      <Button asChild variant="ghost" className="mb-8 hidden md:inline-flex">
+        <Link href="/modules">
           <ArrowLeft className="mr-2 h-4 w-4" />
-          Voltar para Home
+          Voltar para os Módulos
         </Link>
       </Button>
       <header className="mb-8 text-center">
@@ -40,10 +81,20 @@ export default async function ModulePage({ params }: { params: { slug: string } 
           />
         ) : (
           <div className="flex h-full min-h-[60vh] items-center justify-center p-8">
-            <p className="text-center text-muted-foreground">O conteúdo em PDF será exibido aqui.</p>
+            <p className="text-center text-muted-foreground">
+              O conteúdo deste livro está em produção e será liberado em breve.
+            </p>
           </div>
         )}
       </div>
+      {module.pdfUrl && (
+         <div className="mt-8 flex justify-center">
+         <Button onClick={handleToggleComplete} size="lg" variant={isCompleted ? "secondary" : "default"}>
+           <CheckCircle className="mr-2 h-5 w-5" />
+           {isCompleted ? 'Marcar como não concluído' : 'Já terminei esse livro'}
+         </Button>
+       </div>
+      )}
     </div>
   );
 }
