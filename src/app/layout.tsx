@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import BottomNav from '@/components/layout/bottom-nav';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
+import { MobileModeManager } from '@/components/layout/mobile-mode-manager';
 
 export const metadata: Metadata = {
   title: 'Biblical Chronicles',
@@ -23,11 +24,12 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <FirebaseClientProvider>
-            <div className="flex min-h-screen flex-col">
-              <main className="flex-1 pb-24">{children}</main>
-              <BottomNav />
-            </div>
-            <Toaster />
+          <MobileModeManager />
+          <div className="flex min-h-screen flex-col">
+            <main className="flex-1 pb-24">{children}</main>
+            <BottomNav />
+          </div>
+          <Toaster />
         </FirebaseClientProvider>
       </body>
     </html>
