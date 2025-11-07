@@ -2,8 +2,8 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { notFound, useRouter } from 'next/navigation';
-import { doc, getDoc } from 'firebase/firestore';
-import { useAuth, useFirestore, useUser } from '@/firebase';
+import { doc } from 'firebase/firestore';
+import { useFirestore, useUser } from '@/firebase';
 import { setDocumentNonBlocking } from '@/firebase/non-blocking-updates';
 import { modules } from '@/lib/modules';
 import Link from 'next/link';
@@ -16,13 +16,15 @@ export default function ModulePage({ params }: { params: { slug: string } }) {
   const { user, isLoading: userIsLoading } = useUser();
   const db = useFirestore();
   const [isCompleted, setIsCompleted] = useState(false);
+  
+  const { slug } = params;
 
-  const module = modules.find((m) => m.id === params.slug);
+  const module = useMemo(() => modules.find((m) => m.id === slug), [slug]);
 
   const progressDocRef = useMemo(() => {
-    if (!user || !db) return undefined;
-    return doc(db, 'users', user.uid, 'progress', params.slug);
-  }, [user, db, params.slug]);
+    if (!user || !db || !slug) return undefined;
+    return doc(db, 'users', user.uid, 'progress', slug);
+  }, [user, db, slug]);
 
   const [progressData, progressLoading] = useDocumentData(progressDocRef);
 
@@ -52,7 +54,7 @@ export default function ModulePage({ params }: { params: { slug: string } }) {
     if (progressDocRef) {
       setDocumentNonBlocking(
         progressDocRef,
-        { completed: newCompletedStatus, completedAt: new Date() },
+        { completed: newCompleted_status, completedAt: new Date() },
         { merge: true }
       );
     }
