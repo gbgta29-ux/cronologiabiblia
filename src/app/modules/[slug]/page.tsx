@@ -17,14 +17,12 @@ export default function ModulePage({ params }: { params: { slug: string } }) {
   const db = useFirestore();
   const [isCompleted, setIsCompleted] = useState(false);
   
-  const { slug } = params;
-
-  const module = useMemo(() => modules.find((m) => m.id === slug), [slug]);
+  const module = useMemo(() => modules.find((m) => m.id === params.slug), [params.slug]);
 
   const progressDocRef = useMemo(() => {
-    if (!user || !db || !slug) return undefined;
-    return doc(db, 'users', user.uid, 'progress', slug);
-  }, [user, db, slug]);
+    if (!user || !db || !params.slug) return undefined;
+    return doc(db, 'users', user.uid, 'progress', params.slug);
+  }, [user, db, params.slug]);
 
   const [progressData, progressLoading] = useDocumentData(progressDocRef);
 
@@ -54,7 +52,7 @@ export default function ModulePage({ params }: { params: { slug: string } }) {
     if (progressDocRef) {
       setDocumentNonBlocking(
         progressDocRef,
-        { completed: newCompleted_status, completedAt: new Date() },
+        { completed: newCompletedStatus, completedAt: new Date() },
         { merge: true }
       );
     }
