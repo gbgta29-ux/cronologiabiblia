@@ -5,8 +5,11 @@ import { useRouter } from 'next/navigation';
 import { useForm, FormProvider, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import { getFirestore, doc, setDoc } from 'firebase/firestore';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { doc } from 'firebase/firestore';
+import { useAuth, useFirestore } from '@/firebase';
+import { setDocumentNonBlocking } from '@/firebase/non-blocking-updates';
+
 
 import { Button } from '@/components/ui/button';
 import {
@@ -37,6 +40,9 @@ type SignUpFormValues = z.infer<typeof formSchema>;
 export default function SignUpPage() {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
+  const auth = useAuth();
+  const db = useFirestore();
+
   const form = useForm<SignUpFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -49,8 +55,11 @@ export default function SignUpPage() {
 
   const onSubmit: SubmitHandler<SignUpFormValues> = async (data) => {
     setError(null);
-    const auth = getAuth();
-    const db = getFirestore();
+    
+    if (!auth || !db) {
+        setError('Ocorreu um erro de inicialização. Tente novamente mais tarde.');
+        return;
+    }
 
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
@@ -60,10 +69,13 @@ export default function SignUpPage() {
         displayName: data.name,
       });
 
-      await setDoc(doc(db, 'users', user.uid), {
+      const userDocRef = doc(db, 'users', user.uid);
+      const userData = {
         name: data.name,
         email: data.email,
-      });
+      };
+      
+      setDocumentNonBlocking(userDocRef, userData, { merge: false });
 
       router.push('/');
     } catch (error: any) {
