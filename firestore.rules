@@ -1,82 +1,10 @@
-/**
- * @file Firebase Security Rules for Biblical Chronicles App
- *
- * @core_philosophy This ruleset enforces a user-ownership model for user data
- * and allows public read access to module data for logged-in users. User
- * creation requires a specific activation key.
- *
- * @data_structure User data is stored under `/users/{userId}`. Module data is
- * stored under `/modules/{moduleId}` and is publicly readable.
- *
- * @key_security_decisions
- *   - User listing is not allowed.
- *   - All modules are publicly readable to authenticated users, simplifying
- *     read access.
- *   - User accounts are created with a required activation key, adding a layer
- *     of security.
- *   - Only authenticated users can access the application's modules.
- *
- * @denormalization Authorization decisions are made directly on the user
- * document using the `activationKey` and `isActive` fields, avoiding external
- * lookups.
- *
- * @structural_segregation User data and module data are stored in separate
- * collections with different access control policies.
- */
 rules_version = '2';
+
 service cloud.firestore {
   match /databases/{database}/documents {
-
-    /**
-     * @description Controls access to user documents.
-     * @path /users/{userId}
-     * @allow (create) - Authenticated user can create their own document if the activation key matches.
-     * @allow (get, update, delete) - Authenticated user can only access their own document.
-     * @deny (create) - User tries to create an account with a wrong activation key.
-     * @deny (get, update, delete) - User tries to access another user's document.
-     * @principle Enforces document ownership and activation key validation for writes.
-     */
+    // Users can only read and write to their own user document.
     match /users/{userId} {
-      function isSignedIn() {
-        return request.auth != null;
-      }
-
-      function isOwner(userId) {
-        return request.auth.uid == userId;
-      }
-
-      function isValidActivationKey() {
-        return request.resource.data.activationKey == '10SD59S325FDS';
-      }
-
-      function isExistingOwner(userId) {
-        return isOwner(userId) && resource != null;
-      }
-
-      allow create: if isSignedIn() && isOwner(userId) && isValidActivationKey();
-      allow get: if isSignedIn() && isOwner(userId);
-      allow list: if false;
-      allow update: if isSignedIn() && isExistingOwner(userId);
-      allow delete: if isSignedIn() && isExistingOwner(userId);
-    }
-
-    /**
-     * @description Controls access to module documents.
-     * @path /modules/{moduleId}
-     * @allow (get, list) - Any authenticated user can read module data.
-     * @deny (create, update, delete) - No user can create, update, or delete module data.
-     * @principle Allows public read access for authenticated users, restricts write access.
-     */
-    match /modules/{moduleId} {
-      function isSignedIn() {
-        return request.auth != null;
-      }
-
-      allow get: if isSignedIn();
-      allow list: if isSignedIn();
-      allow create: if false;
-      allow update: if false;
-      allow delete: if false;
+      allow read, write: if request.auth != null && request.auth.uid == userId;
     }
   }
 }

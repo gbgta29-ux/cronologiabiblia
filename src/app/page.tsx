@@ -1,10 +1,33 @@
+'use client';
+
+import { useUser } from '@/firebase';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Loader2 } from 'lucide-react';
 
 export default function Home() {
+  const { user, isLoading } = useUser();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isLoading && !user) {
+      router.push('/login');
+    }
+  }, [user, isLoading, router]);
+
+  if (isLoading || !user) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin" />
+      </div>
+    );
+  }
+
   const getImage = (id: string) => {
     return PlaceHolderImages.find((img) => img.id === id)!;
   };
@@ -39,8 +62,8 @@ export default function Home() {
           <h1 className="font-headline text-3xl font-bold text-foreground">
             Resumo Cronológico da Bíblia
           </h1>
-          <Button className="mt-4 rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg hover:bg-primary/90">
-            Começar Agora
+          <Button asChild className="mt-4 rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg hover:bg-primary/90">
+            <Link href="/testaments">Começar Agora</Link>
           </Button>
         </div>
       </header>
