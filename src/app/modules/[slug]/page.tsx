@@ -20,7 +20,7 @@ export default function ModulePage({ params }: { params: { slug: string } }) {
   const module = useMemo(() => modules.find((m) => m.id === params.slug), [params.slug]);
 
   const progressDocRef = useMemo(() => {
-    if (!user || !db || !params.slug) return undefined;
+    if (!user || !db) return undefined;
     return doc(db, 'users', user.uid, 'progress', params.slug);
   }, [user, db, params.slug]);
 
