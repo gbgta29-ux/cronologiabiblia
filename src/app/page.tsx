@@ -41,7 +41,7 @@ export default function Home() {
     {
       id: 'bonus-pdf',
       title: 'Seus PDFS bonus',
-      href: '#',
+      href: '/bonus-pdf',
     },
     {
       id: 'presentes',
