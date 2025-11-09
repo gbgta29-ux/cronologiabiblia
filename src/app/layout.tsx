@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
@@ -26,7 +27,7 @@ export default function RootLayout({
         <FirebaseClientProvider>
           <MobileModeManager />
           <div className="flex min-h-screen flex-col">
-            <main className="flex-1 pb-24">{children}</main>
+            <main className="flex-1 pb-24 md:pb-0">{children}</main>
             <BottomNav />
           </div>
           <Toaster />

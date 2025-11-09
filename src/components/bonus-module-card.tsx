@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardTitle } from '@/components/ui/card';
@@ -9,8 +10,10 @@ type BonusModuleCardProps = {
 };
 
 export function BonusModuleCard({ module }: BonusModuleCardProps) {
+  const viewerUrl = `/pdf-viewer?url=${encodeURIComponent(module.pdfUrl)}`;
+
   return (
-    <Link href={module.pdfUrl} target="_blank" rel="noopener noreferrer" className="group block">
+    <Link href={viewerUrl} className="group block">
       <Card className="relative aspect-square overflow-hidden rounded-lg border-primary/20 bg-card shadow-lg transition-all duration-300 hover:scale-105 hover:border-primary/40 hover:shadow-primary/20">
         <Image
           src={module.imageUrl}
