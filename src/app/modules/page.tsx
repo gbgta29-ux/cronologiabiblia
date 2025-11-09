@@ -25,7 +25,7 @@ function ModulesContent() {
     return collection(db, 'users', user.uid, 'progress');
   }, [user, db]);
 
-  const [progressData, progressLoading] = useCollectionData(progressColRef);
+  const [progressData, progressLoading] = useCollectionData(progressColRef, { idField: 'id'});
 
   const getImageForModule = (imageId: string) => {
     const image = PlaceHolderImages.find((img) => img.id === imageId);
