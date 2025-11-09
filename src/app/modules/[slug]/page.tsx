@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
@@ -17,8 +16,10 @@ export default function ModulePage({ params }: { params: { slug: string } }) {
   const { user, isLoading: userIsLoading } = useUser();
   const db = useFirestore();
   const [isCompleted, setIsCompleted] = useState(false);
-  
-  const module = useMemo(() => modules.find((m) => m.id === params.slug), [params.slug]);
+
+  const module = useMemo(() => modules.find((m) => m.id === params.slug), [
+    params.slug,
+  ]);
 
   const progressDocRef = useMemo(() => {
     if (!user || !db || !params.slug) return undefined;
@@ -59,7 +60,9 @@ export default function ModulePage({ params }: { params: { slug: string } }) {
     }
   };
 
-  const pdfViewerUrl = module.pdfUrl ? `/pdf-viewer?url=${encodeURIComponent(module.pdfUrl)}` : '#';
+  const pdfViewerUrl = module.pdfUrl
+    ? `/pdf-viewer?url=${encodeURIComponent(module.pdfUrl)}`
+    : '#';
 
   return (
     <div className="container mx-auto max-w-4xl px-4 py-8">
@@ -77,7 +80,9 @@ export default function ModulePage({ params }: { params: { slug: string } }) {
       <div className="min-h-[60vh] rounded-lg border-2 border-dashed border-muted-foreground/20 bg-card/30 flex flex-col items-center justify-center p-8 text-center">
         {module.pdfUrl ? (
           <>
-            <p className="mb-6 text-muted-foreground">Clique no botão abaixo para ler o livro.</p>
+            <p className="mb-6 text-muted-foreground">
+              Clique no botão abaixo para ler o livro.
+            </p>
             <Button asChild size="lg">
               <Link href={pdfViewerUrl}>
                 <BookOpen className="mr-2 h-5 w-5" />
@@ -86,18 +91,24 @@ export default function ModulePage({ params }: { params: { slug: string } }) {
             </Button>
           </>
         ) : (
-            <p className="text-muted-foreground">
-              O conteúdo deste livro está em produção e será liberado em breve.
-            </p>
+          <p className="text-muted-foreground">
+            O conteúdo deste livro está em produção e será liberado em breve.
+          </p>
         )}
       </div>
       {module.pdfUrl && (
-         <div className="mt-8 flex justify-center">
-         <Button onClick={handleToggleComplete} size="lg" variant={isCompleted ? "secondary" : "default"}>
-           <CheckCircle className="mr-2 h-5 w-5" />
-           {isCompleted ? 'Marcar como não concluído' : 'Já terminei esse livro'}
-         </Button>
-       </div>
+        <div className="mt-8 flex justify-center">
+          <Button
+            onClick={handleToggleComplete}
+            size="lg"
+            variant={isCompleted ? 'secondary' : 'default'}
+          >
+            <CheckCircle className="mr-2 h-5 w-5" />
+            {isCompleted
+              ? 'Marcar como não concluído'
+              : 'Já terminei esse livro'}
+          </Button>
+        </div>
       )}
     </div>
   );
