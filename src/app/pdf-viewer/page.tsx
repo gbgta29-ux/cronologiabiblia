@@ -5,7 +5,6 @@ import { Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Download, Loader2 } from 'lucide-react';
-import Link from 'next/link';
 
 function PdfViewer() {
   const searchParams = useSearchParams();
@@ -40,12 +39,24 @@ function PdfViewer() {
         </Button>
       </header>
       <main className="flex-1">
-        <iframe
-          src={pdfUrl}
-          className="h-full w-full border-0"
-          title="Visualizador de PDF"
-          allow="fullscreen"
-        />
+        <object
+          data={pdfUrl}
+          type="application/pdf"
+          className="h-full w-full"
+          aria-label="Visualizador de PDF"
+        >
+          <div className="flex h-full flex-col items-center justify-center p-4">
+            <p className="mb-4 text-center text-muted-foreground">
+              Seu navegador não suporta a visualização de PDFs.
+            </p>
+            <Button asChild>
+              <a href={pdfUrl} download>
+                <Download className="mr-2 h-4 w-4" />
+                Baixar PDF
+              </a>
+            </Button>
+          </div>
+        </object>
       </main>
     </div>
   );
