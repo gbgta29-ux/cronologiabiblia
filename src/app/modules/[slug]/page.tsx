@@ -60,10 +60,6 @@ export default function ModulePage({ params }: { params: { slug: string } }) {
     }
   };
 
-  const pdfViewerUrl = module.pdfUrl
-    ? `/pdf-viewer?url=${encodeURIComponent(module.pdfUrl)}`
-    : '#';
-
   return (
     <div className="container mx-auto max-w-4xl px-4 py-8">
       <Button asChild variant="ghost" className="mb-8 hidden md:inline-flex">
@@ -84,10 +80,10 @@ export default function ModulePage({ params }: { params: { slug: string } }) {
               Clique no botão abaixo para ler o livro.
             </p>
             <Button asChild size="lg">
-              <Link href={pdfViewerUrl}>
+              <a href={module.pdfUrl} target="_blank" rel="noopener noreferrer">
                 <BookOpen className="mr-2 h-5 w-5" />
                 Ler Livro
-              </Link>
+              </a>
             </Button>
           </>
         ) : (

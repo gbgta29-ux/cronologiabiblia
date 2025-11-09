@@ -9,10 +9,8 @@ type BonusModuleCardProps = {
 };
 
 export function BonusModuleCard({ module }: BonusModuleCardProps) {
-  const viewerUrl = `/pdf-viewer?url=${encodeURIComponent(module.pdfUrl)}`;
-
   return (
-    <Link href={viewerUrl} className="group block">
+    <a href={module.pdfUrl} target="_blank" rel="noopener noreferrer" className="group block">
       <Card className="relative aspect-square overflow-hidden rounded-lg border-primary/20 bg-card shadow-lg transition-all duration-300 hover:scale-105 hover:border-primary/40 hover:shadow-primary/20">
         <Image
           src={module.imageUrl}
@@ -29,6 +27,6 @@ export function BonusModuleCard({ module }: BonusModuleCardProps) {
           </CardTitle>
         </div>
       </Card>
-    </Link>
+    </a>
   );
 }
